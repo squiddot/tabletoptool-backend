@@ -1,0 +1,19 @@
+{
+  "name": "tabletoptool-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dbpopulate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "express-validator": "^3.2.1",
+    "mongoose": "^4.11.7",
+    "passport": "^0.4.0"
+  }
+}
