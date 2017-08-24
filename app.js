@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const passport = require('passport')
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-const databaseURL = process.env.DATABASE || 'mongodb://localhost:27017/giffy'
+const databaseURL = process.env.DATABASE || 'mongodb://localhost:27017/tabletopdb'
 mongoose.connect(databaseURL);
 
 // const port = process.env.PORT || 5000
@@ -12,6 +12,26 @@ mongoose.connect(databaseURL);
 //   console.log(`listening on ${port}`)
 // })
 
+app.get("/api/monsters/:name", (req, res) => {
+  monsters.find({name: req.params.name})
+  .then(monster => {
+    res.json({
+      monster: monster
+    })
+  })
+})
+
+app.get("/api/classes/:name", (req, res) => {
+  classes.find({name: req.params.name}).sort({createdAt: -1})
+  .then(classes => {
+    res.json({
+      classes: classes
+    })
+  })
+})
+
+
+
 app.listen(3000, function(){
-  console.log("here i go! zoom~ http://0.0.0.0:3000")
+  console.log("here i go! zoom~ http://0.0.0.0:3005")
 })
