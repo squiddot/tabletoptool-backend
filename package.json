@@ -5,7 +5,7 @@
   "main": "dbpopulate.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-   "start": "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,9 +14,12 @@
     "body-parser": "^1.17.2",
     "concurrently": "^3.5.0",
     "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "express-validator": "^3.2.1",
     "mongoose": "^4.10.8",
-    "passport": "^0.4.0"
+    "mongoose-findorcreate": "^2.0.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0"
   }
 }

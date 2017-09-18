@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
+const findOrCreate = require("mongoose-find-or-create");
 
-const userSchema = new mongoose.Schema({
-  username: String,
-  token: String
+const gameSchema = new mongoose.Schema({
+  users: [String],
+  token: String,
+  decks: [String]
 });
 
-const User = mongoose.model("User", userSchema);
-module.exports = User;
+const Game = mongoose.model("Game", gameSchema);
+module.exports = Game;

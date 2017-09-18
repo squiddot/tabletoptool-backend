@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
+const findOrCreate = require("mongoose-find-or-create");
 
-const userSchema = new mongoose.Schema({
-  userid: Number
+const deckSchema = new mongoose.Schema({
+  userid: Number,
+  cards: [String]
 });
 
-const User = mongoose.model("User", userSchema);
-module.exports = User;
+const Deck = mongoose.model("Deck", deckSchema);
+module.exports = Deck;
