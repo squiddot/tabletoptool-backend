@@ -26,18 +26,17 @@ app.get("/monsters/index/:index", (req, res) => {
     res.json({
       monster: monster
     })
-    console.log(monster)
   })
 })
 
-// app.get("/api/classes/:name", (req, res) => {
-//   classes.find({name: req.params.name}).sort({createdAt: -1})
-//   .then(classes => {
-//     res.json({
-//       classes: classes
-//     })
-//   })
-// })
+app.get("/api/classes/:name", (req, res) => {
+  classes.find({name: req.params.name})
+  .then(classes => {
+    res.json({
+      classes: classes
+    })
+  })
+})
 
 app.listen(3005, function(){
   console.log("here i go! zoom~ http://0.0.0.0:3005")
