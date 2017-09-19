@@ -7,5 +7,7 @@ const gameSchema = new mongoose.Schema({
   decks: [String]
 });
 
+gameSchema.plugin(findOrCreate);
+
 const Game = mongoose.model("Game", gameSchema);
 module.exports = Game;

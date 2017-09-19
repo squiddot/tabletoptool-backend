@@ -7,5 +7,7 @@ const userSchema = new mongoose.Schema({
   games: [String]
 });
 
+userSchema.plugin(findOrCreate);
+
 const User = mongoose.model("User", userSchema);
 module.exports = User;

@@ -6,5 +6,7 @@ const deckSchema = new mongoose.Schema({
   cards: [String]
 });
 
+deckSchema.plugin(findOrCreate);
+
 const Deck = mongoose.model("Deck", deckSchema);
 module.exports = Deck;

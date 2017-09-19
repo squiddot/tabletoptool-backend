@@ -74,6 +74,8 @@ const monsterSchema = new mongoose.Schema({
   url: String
 });
 
+monsterSchema.plugin(findOrCreate);
+
 const Monster = mongoose.model("Monster", monsterSchema);
 module.exports = Monster;
 

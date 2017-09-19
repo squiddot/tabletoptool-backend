@@ -9,5 +9,7 @@ const cardSchema = new mongoose.Schema({
   notes: String
 });
 
+cardSchema.plugin(findOrCreate);
+
 const Card = mongoose.model("Card", cardSchema);
 module.exports = Card;
